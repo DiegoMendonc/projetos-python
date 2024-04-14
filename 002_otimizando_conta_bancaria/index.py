@@ -96,17 +96,19 @@ def criar_conta(agencia, numero_conta, usuarios): #Função de criação de cont
     
     if usuario:
         print("\n\033[3;34mCONTA CRIADA COM SUCESSO!\033[m")
-        return
+        return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
 
     print("\n\033[3;31mUSUÁRIO NÃO ENCONTRADO, FLUXO DE CRIAÇÃO DE CONTA ENCERRADO!\033[m")
 
 def listar_contas(contas): #Função de listagem de contas
    for conta in contas:
-       resulta = f"""
-           Agência: {conta['agencia']}
-           C/C: {conta['numero_conta']}
-           Titular: {conta['usuario']['nome']}
-        """
+        resulta = f"""
+            Agência:\t{conta["agencia"]}
+            C/C:\t\t{conta["numero_conta"]}
+            Titular:\t{conta["usuario"]["nome"]}
+            """
+        linha()
+        print(textwrap.dedent(resulta))
                 
 def main(): #Função de execução do programa
 
