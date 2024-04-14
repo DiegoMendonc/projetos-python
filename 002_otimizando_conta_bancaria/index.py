@@ -1,5 +1,5 @@
 from emoji import emojize as em   # Biblioteco de emoji para dar um charme na apresentação do programa hehe...
-import textwrap
+import textwrap 
 
 
 def inicio(x): #Função de Título do Programa
@@ -108,7 +108,6 @@ def listar_contas(contas): #Função de listagem de contas
            Titular: {conta['usuario']['nome']}
         """
                 
-
 def main(): #Função de execução do programa
 
 # Variáveis base para o funcionamento do programa
