@@ -70,10 +70,6 @@ def exibir_extrato(saldo, /, *, extrato): #Função de extrato do Programa
         print(f"\033[3;34mSaldo: R${saldo:.2f}\033[m")
         linha()
 
-def filtrar_usuario(cpf, usuarios): #Função de filtragem de usuário caso aponte duplicidade de CPF no Programa
-    usuarios_filtrados = [usuario for usuario in usuarios if usuario['cpf'] == cpf]
-    return usuarios_filtrados[0] if usuarios_filtrados else None
-
 def criar_usuario(usuarios): #Função de criação de novo usuário do Programa
     cpf = int(input("Informe o CPF (somente núemros): "))
     usuario = filtrar_usuario(cpf, usuarios)
@@ -90,6 +86,10 @@ def criar_usuario(usuarios): #Função de criação de novo usuário do Programa
     
     print("\n\033[3;34mUSUÁRIO CRIADO COM SUCESSO!\033[m")
 
+def filtrar_usuario(cpf, usuarios): #Função de filtragem de usuário caso aponte duplicidade de CPF no Programa
+    usuarios_filtrados = [usuario for usuario in usuarios if usuario['cpf'] == cpf]
+    return usuarios_filtrados[0] if usuarios_filtrados else None
+
 def criar_conta(agencia, numero_conta, usuarios): #Função de criação de conta para novo usuário no Programa
     cpf = int(input("Informe o CPF do usuário: "))
     usuario = filtrar_usuario(cpf, usuarios)
@@ -102,13 +102,12 @@ def criar_conta(agencia, numero_conta, usuarios): #Função de criação de cont
 
 def listar_contas(contas): #Função de listagem de contas
    for conta in contas:
-       result = f"""
+       resulta = f"""
            Agência: {conta['agencia']}
            C/C: {conta['numero_conta']}
            Titular: {conta['usuario']['nome']}
         """
-    linha()
-    print(textwrap.dedent(result))
+                
 
 def main(): #Função de execução do programa
 
@@ -154,18 +153,10 @@ def main(): #Função de execução do programa
         
         elif opcao == 3: # Condição se for acionado o botão 3 [Extrato]
             exibir_extrato(saldo, extrato=extrato)
-        
-        elif opcao == 9: # Condição se for acionado o botão 9 [Sair da Aplicação]
-            print("\033[3;34mMUITO OBRIGADO POR USAR NOSSOS SERVIÇOS!\033[m")
-            linha()
-            break
-        
+          
         elif opcao == 5: # Condição se for acionado o botão 5 [Criar Usuário]
             criar_usuario(usuarios)
         
-        elif opcao == 7: # Condição se for acionado o botão 7 [Listar Contas]
-            listar_contas(contas)
-            
         elif opcao == 6:  # Condição se for acionado o botão 6 [Criação de Contas]
             numero_conta = len(contas) + 1 
             conta = criar_conta(AGENCIA, numero_conta, usuarios)
@@ -173,6 +164,14 @@ def main(): #Função de execução do programa
             if conta:
                 contas.append(conta)
         
+        elif opcao == 7: # Condição se for acionado o botão 7 [Listar Contas]
+            listar_contas(contas)
+                   
+        elif opcao == 9: # Condição se for acionado o botão 9 [Sair da Aplicação]
+            print("\033[3;34mMUITO OBRIGADO POR USAR NOSSOS SERVIÇOS!\033[m")
+            linha()
+            break
+         
         else: # Condição se for acionado botão inválido
             print("\033[3;31mACESSO NEGADO! FAVOR REPETIR PROCESSO\033[m")
             linha()
