@@ -4,6 +4,6 @@
 <p>À medida que estarei desenvolvendo projetos mais complexos estarei compartilhando com vocês neste repositório dedicado.</p>
 <hr>
 <hr>
-<p>Estou totalmente aberto à <em>feedbacks</em> sobre análise de dados em <strong>Python</strong>! &#x1F601;</p>
+<p>Estou totalmente aberto à <em>feedbacks</em> sobre desenvolvimento e análise de dados em <strong>Python</strong>! &#x1F601;</p>
 <p>Obrigado à todos e tenham um ótimo dia!</p>
 <hr>
