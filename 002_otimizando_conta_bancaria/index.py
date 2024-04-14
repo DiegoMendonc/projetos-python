@@ -103,12 +103,12 @@ def criar_conta(agencia, numero_conta, usuarios): #Função de criação de cont
 def listar_contas(contas): #Função de listagem de contas
    for conta in contas:
        result = f"""
-           Agência:\t{conta['agencia']}
-           C/C:\t\t{conta['numero_conta']}
-           Titular:\t{conta['usuario']['nome']}
+           Agência: {conta['agencia']}
+           C/C: {conta['numero_conta']}
+           Titular: {conta['usuario']['nome']}
         """
-       linha()
-       print(textwrap.dedent(result))
+    linha()
+    print(textwrap.dedent(result))
 
 def main(): #Função de execução do programa
 
@@ -177,4 +177,5 @@ def main(): #Função de execução do programa
             print("\033[3;31mACESSO NEGADO! FAVOR REPETIR PROCESSO\033[m")
             linha()
 
+#Inicialização do Programa:
 main()
