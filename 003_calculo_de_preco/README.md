@@ -1,4 +1,5 @@
-<h1>INFORMATIVO REF. AO PROJETO</h1>
+<hr>
+<h1>Projeto 003 - Projeto Cálculo de Preço - Python &#x1F60E;</h1>
 <hr>
 <h2>Definição do projeto "calculo-de-preco":</h2>
 <ul>
@@ -27,4 +28,7 @@
   <li>Criando DocStrings para realizar o manual de cada função dentro do módulo</li>
 </ul>
 <hr>
-<h3>Espero que gostem!</h3>
+<p>À medida que estarei desenvolvendo projetos mais complexos estarei compartilhando com vocês neste repositório dedicado.</p>
+<p>Estou totalmente aberto à <em>feedbacks</em> sobre desenvolvimento em <strong>Python</strong>! &#x1F601;</p>
+<p>Obrigado à todos e tenham um ótimo dia!</p>
+<hr>
