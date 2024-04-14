@@ -7,8 +7,9 @@
     <li>O usuário tem limite de até 3 saques diários, excedendo esta regra o programa impede a sua execução de saque;</li>
 </ul>
 <hr>
+<h2>Conceitos empregados no programa:</h2>
 <ul>
-    <h2>Conceitos empregados no programa:</h2>
+    <li>Linhas de código devidamente documentadas para fins de manutenção e também para fácil compreensão de outros desenvolvedores;</li>
     <li>Funções para simplificar a operação durante sua execução;</li>
     <li>Looping infinito para fluir a execução do programa até ele ser encerrado a pedido pelo cliente.</li>
     <li>Condicionais simples e condicionais aninhadas para estruturar a lógica da funcionaliadde do programa bancário</li>
