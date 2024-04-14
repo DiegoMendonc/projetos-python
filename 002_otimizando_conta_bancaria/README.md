@@ -3,7 +3,16 @@
 <p>Olá à todos! Este projeto baseia-se em um sistema otimizado de conta bancária de depósito bancário desenvolvido em Python</p>
 <h2>Propostas do projeto:</h2>
 <ul>
-    <li>Programa bancário de simples execução, onde há algumas funcionalidades:Criar usuário e conta, Listagem de contas cadastradas, Depósito, Saque, Extrato e Sair da aplicação;</li>
+    <li>Programa bancário de simples execução, onde há algumas funcionalidades:
+        <ul>
+            <li>Criação de usuário e conta do banco;</li>
+            <li>Listagem de contas cadastradas;</li>
+            <li>Depósito;</li>
+            <li>Saque;</li>
+            <li>Extrato;</li>
+            <li>Sair da aplicação;</li>
+        </ul>
+    </li>
     <li>O usuário tem limite de até 3 saques diários, excedendo esta regra o programa impede a sua execução de saque;</li>
 </ul>
 <hr>
