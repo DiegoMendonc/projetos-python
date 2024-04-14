@@ -19,7 +19,7 @@
 </ul>
 <hr>
 <hr>
-<img src="">
+<img src="snake_game_execucao.gif">
 <hr>
 <p>À medida que estarei desenvolvendo projetos mais complexos estarei compartilhando com vocês neste repositório dedicado.</p>
 <p>Estou totalmente aberto à <em>feedbacks</em> sobre desenvolvimento em <strong>Python</strong>! &#x1F601;</p>
