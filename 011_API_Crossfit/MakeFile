@@ -1,2 +1,3 @@
 run:
+	@workoutapi\Scripts\Activate
 	@uvicorn workout_api.main:app --reload
