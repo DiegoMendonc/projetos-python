@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "Positivefloat"
-    ]
+    ],
+    "DockerRun.DisableDockerrc": true
 }
