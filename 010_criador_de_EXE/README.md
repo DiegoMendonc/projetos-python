@@ -1,5 +1,3 @@
-## README.md
-
 # Projeto PyInstaller
 
 Este projeto contém um script Python para criar um executável a partir de um script Python usando PyInstaller.
@@ -82,6 +80,3 @@ criar_executavel(script)
 
 Este script define uma função `criar_executavel` que recebe o caminho de um script Python e utiliza o PyInstaller para criar um executável a partir dele. O output e os erros do processo são exibidos no console.
 
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
