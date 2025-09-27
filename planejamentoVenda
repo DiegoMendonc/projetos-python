@@ -1,0 +1,58 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
+
+
+
+# Carregar os dados
+df = pd.read_csv("vendas.csv",sep=";", parse_dates=["Data"],encoding="latin-1")
+df.sort_values(by=["Produto", "Data"], inplace=True)
+
+# Lista de produtos únicos
+produtos = df["Produto"].unique()
+
+df
+
+# Dicionário para armazenar previsões
+previsoes_dict = {"Produto": [], "Data": [], "Previsao": []}
+
+# Definir período de previsão
+periodo_futuro = 3  # Exemplo: previsão para os próximos 6 períodos
+
+# Loop pelos produtos
+for produto in produtos:
+    dados_produto = df[df["Produto"] == produto][["Data", "Quantidade Vendida"]].set_index("Data")
+    
+    # Treinar modelo Holt-Winters
+    try:
+        modelo = ExponentialSmoothing(dados_produto, trend="add", seasonal="add", seasonal_periods=12)
+        modelo_fit = modelo.fit()
+        
+        # Fazer previsão
+        previsao = modelo_fit.forecast(steps=periodo_futuro)
+        datas_futuras = pd.date_range(dados_produto.index[-1], periods=periodo_futuro+1, freq="M")[1:]
+        
+        # Guardar previsões
+        for data, valor in zip(datas_futuras, previsao):
+            previsoes_dict["Produto"].append(produto)
+            previsoes_dict["Data"].append(data)
+            previsoes_dict["Previsao"].append(valor)
+        
+        # Exibir gráfico da previsão
+        plt.figure(figsize=(8, 4))
+        plt.plot(dados_produto, label="Vendas Reais", color="blue")
+        plt.plot(datas_futuras, previsao, label="Previsão", color="red")
+        plt.title(f"Previsão de vendas para {produto}")
+        plt.legend()
+        plt.show()
+        
+    except Exception as e:
+        print(f"Erro ao processar {produto}: {e}")
+
+# Criar DataFrame com previsões
+df_previsoes = pd.DataFrame(previsoes_dict)
+
+# Exportar para Excel
+df_previsoes.to_excel("previsoes_vendas.xlsx", index=False)
+print("Arquivo Excel 'previsoes_vendas.xlsx' salvo com sucesso!")
